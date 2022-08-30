@@ -32,7 +32,7 @@ function ImageRoute({
   return (
     <>
       <Head>
-        <title>Disco.pics | {image.slug}</title>
+        <title>Disco.pics</title>
 
         {/* Image when sharing */}
         {image.img_url.endsWith(".mp4") ||
@@ -125,7 +125,7 @@ function ImageRoute({
                   "cdn.discordapp.com",
                   "media.discordapp.net"
                 )}
-                className="file h-96"
+                className="file md:h-96"
                 alt={image.slug}
               />
             </div>
