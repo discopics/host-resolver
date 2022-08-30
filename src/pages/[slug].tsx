@@ -32,6 +32,8 @@ function ImageRoute({
   return (
     <>
       <Head>
+        <title>Disco.pics | {image.slug}</title>
+
         {/* Image when sharing */}
         {image.img_url.endsWith(".mp4") ||
         image.img_url.endsWith(".webm") ||
@@ -123,8 +125,7 @@ function ImageRoute({
                   "cdn.discordapp.com",
                   "media.discordapp.net"
                 )}
-                className="file"
-                height={600}
+                className="file h-96"
                 alt={image.slug}
               />
             </div>
@@ -156,7 +157,10 @@ export async function getServerSideProps(context: NextPageContext) {
   const url = "https://app.disco.pics";
 
   // Get the hostname
-  const hostname = context?.req?.headers.host;
+  const hostname =
+    process.env.NODE_ENV == "development"
+      ? "disco.pics"
+      : context?.req?.headers.host;
 
   if (!hostname) {
     return {
