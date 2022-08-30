@@ -153,7 +153,7 @@ function ImageRoute({
 export async function getServerSideProps(context: NextPageContext) {
   const { slug } = context.query;
 
-  const url = "https://disco.pics";
+  const url = "https://app.disco.pics";
 
   // Get the hostname
   const hostname = context?.req?.headers.host;
