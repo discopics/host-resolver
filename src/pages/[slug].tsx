@@ -116,7 +116,7 @@ function ImageRoute({
       >
         {image && (
           <>
-            <div className="w-full flex justify-center items-center">
+            <div className="flex items-center justify-center w-full">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={image.img_url.replace(
@@ -124,16 +124,16 @@ function ImageRoute({
                   "media.discordapp.net"
                 )}
                 className="file"
-                width={600}
+                height={600}
                 alt={image.slug}
               />
             </div>
           </>
         )}
 
-        <div className="flex flex-col justify-center items-center h-full mt-5 gap-2">
+        <div className="flex flex-col items-center justify-center h-full gap-2 mt-5">
           <a
-            className="downloadbtn px-3 py-2 border-2 border-blue-300 hover:bg-blue-500 text-white cursor-pointer"
+            className="px-3 py-2 text-white border-2 border-blue-300 cursor-pointer downloadbtn hover:bg-blue-500"
             href={image.img_url}
             rel="noopener noreferrer"
             target="_blank"
